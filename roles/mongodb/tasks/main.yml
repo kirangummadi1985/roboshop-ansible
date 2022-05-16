@@ -16,8 +16,8 @@
 
 - name: Start MongoDB
   ansible.builtin.systemd:
-    name: mongod
-    state: satrted
+    name: mongodb
+    state: restarted
     enabled: yes
 
 - name: Download & Extract MongoDB Content
