@@ -34,3 +34,15 @@
 - name: Install NodeJS Dependencies
   community.general.npm:
     path: /home/roboshop/catalogue
+
+- name: Setup SystemD Config File
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Start Catalogue Service
+  ansible.builtin.systemd:
+    name: catalogue
+    state: restarted
+    enable: yes
+    daemon_reload: yes
