@@ -16,7 +16,7 @@
     state: started
     enabled: yes
 
-- name: Check MySQL Working with NEW Credentisls or not
+- name: Check MySQL Working with NEW Credentials or not
   mysql_info:
     login_user: root
     login_password: RoboShop@1
@@ -37,7 +37,7 @@
       register: DEFAULT_PASSWORD
 
     - name: Reset the password
-      ansible.builtin.shell: mysql --connect-expired-password -u root -p{{DEFAULT_PASSWORD.stdout}} </tmp/password-reset.sql
+      ansible.builtin.shell: mysql --connect-expired-password -u root -p"{{DEFAULT_PASSWORD.stdout}}" </tmp/password-reset.sql
 
 - name: Download & Extract MySQL Content
   ansible.builtin.unarchive:
