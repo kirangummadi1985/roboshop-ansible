@@ -1,3 +1,5 @@
+@Library('roboshop-library') _
+
 pipeline {
   agent any
 
