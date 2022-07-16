@@ -10,7 +10,7 @@
 
 - name: Copy Prometheus Alert Rules
   ansible.builtin.template:
-    src: record-alert.yml
+    src: alert-rules.yml
     dest: /opt/prometheus/alert-rules.yml
 
 
