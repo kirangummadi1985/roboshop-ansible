@@ -25,5 +25,14 @@
     host: 0.0.0.0
     delay: 20
 
+- name: Copy AlertManager Config
+  ansible.builtin.template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+- name: Restart Alertmanager
+  ansible.builtin.template:
+    name: alertmanager
+    state: restarted
 
 
