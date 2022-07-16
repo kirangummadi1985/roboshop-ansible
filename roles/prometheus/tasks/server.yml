@@ -32,7 +32,7 @@
     dest: /opt/alertmanager/alertmanager.yml
 
 - name: Restart Alertmanager
-  ansible.builtin.template:
+  ansible.builtin.systemd:
     name: alertmanager
     state: restarted
 
